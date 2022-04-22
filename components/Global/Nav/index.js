@@ -5,7 +5,7 @@ import { Box, Container as ThemeContainer } from "theme-ui";
 const Nav = () => {
   return (
     <Wrapper>
-      <Container>MLColor.</Container>
+      <Container>MLColour.</Container>
     </Wrapper>
   );
 };
