@@ -24,7 +24,13 @@ export default class AppDocument extends Document {
   render() {
     return (
       <Html>
-        <Head></Head>
+        <Head>
+          <script
+            async
+            type="text/javascript"
+            src="https://cdn.applixir.com/applixir.sdk3.0m.js"
+          ></script>
+        </Head>
         <body>
           <Main />
           <NextScript />
