@@ -1,0 +1,8 @@
+@font-face {
+  font-family: "righteous-regular";
+  src: url("/static/fonts/Righteous-Regular.ttf");
+  font-weight: normal;
+  font-display: auto;
+  font-style: normal;
+  font-feature-settings: "ss03" on, "ss01" on;
+}
