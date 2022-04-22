@@ -5,6 +5,7 @@ import Layout from "../components/Global/Layout";
 import theme from "../theme";
 import { Global, css } from "@emotion/react";
 import { AppContextProvider } from "context/AppContext";
+import * as gtag from "utils/gtag";
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -18,6 +19,10 @@ function MyApp({ Component, pageProps }) {
         `${window.innerHeight * 0.01}px`
       );
     });
+  }, []);
+  useEffect(() => {
+    console.log("📟 VIEW", "Home");
+    gtag.pageview("Home");
   }, []);
   return (
     <AppContextProvider>

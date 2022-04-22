@@ -20,11 +20,25 @@ export default class AppDocument extends Document {
       ),
     };
   }
-
   render() {
     return (
       <Html>
-        <Head></Head>
+        <Head>
+          <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-365RN69V8P"
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-365RN69V8P');
+            `,
+            }}
+          />
+        </Head>
         <body>
           <Main />
           <NextScript />
