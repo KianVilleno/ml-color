@@ -3,8 +3,7 @@ import Head from "next/head";
 
 const Seo = ({ title, description, image, canonical, isHome }) => {
   const domain = "";
-  const siteName = "Sky Discovery";
-
+  const siteName = "MLColour.";
   const canonicalFull = canonical ? `${domain}${canonical}` : null;
   let pageTitle = title;
   if (!title) pageTitle = siteName;
