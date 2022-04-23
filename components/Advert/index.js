@@ -5,6 +5,7 @@ import { Box, Text, Button } from "theme-ui";
 import AdverItem from "./AdverItem";
 import adverts from "data/adverts";
 import Modal from "../Modal";
+import * as gtag from "utils/gtag";
 
 const TIMER = 15;
 const COOLDOWN = 5;
@@ -17,6 +18,7 @@ const Advert = () => {
 
   useEffect(() => {
     if (showAdvert) {
+      gtag.event("start_watch_advert");
       const continueInterval = setInterval(() => {
         setContinueTime((prev) => {
           if (prev > 0) {
@@ -24,7 +26,7 @@ const Advert = () => {
           }
           clearInterval(continueInterval);
           setContinueAllowed(true);
-
+          gtag.event("finished_watch_advert");
           return prev;
         });
       }, 1000);
@@ -36,6 +38,7 @@ const Advert = () => {
 
   const handleContinue = () => {
     if (continueAllowed) {
+      gtag.event("generate_code", "Advert Continue");
       generateCode();
       setShowAdvert(false);
       setAdvertCooldown(COOLDOWN);

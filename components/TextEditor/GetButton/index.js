@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import styled from "@emotion/styled";
 import { AppContext } from "context/AppContext";
 import { Box, Button } from "theme-ui";
-
+import * as gtag from "utils/gtag";
 const GetButton = () => {
   const {
     generateCode,
@@ -16,6 +16,7 @@ const GetButton = () => {
     if (advertCooldown === 0) {
       setShowAdvert(true);
     } else {
+      gtag.event("generate_code", "Default");
       generateCode();
       setAdvertCooldown((prev) => prev - 1);
     }

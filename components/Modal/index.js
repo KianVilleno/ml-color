@@ -55,7 +55,7 @@ const Backdrop = styled(Box)`
 `;
 const ContentWrapper = styled(Box)`
   border-radius: 20px;
-  background-color: white;
+  background-color: ${({ theme }) => theme.colors.white};
   max-width: 500px;
   max-height: 800px;
   width: 90vw;
