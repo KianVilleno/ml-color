@@ -1,11 +1,17 @@
 import styled from "@emotion/styled";
+import Image from "next/image";
 import React from "react";
-import { Box, Container as ThemeContainer } from "theme-ui";
+import { Box, Container as ThemeContainer, Text } from "theme-ui";
 
 const Nav = () => {
   return (
     <Wrapper>
-      <Container>MLColour.</Container>
+      <Container>
+        <Text>MLColour.</Text>
+        <Logo>
+          <img alt="ml_logo" src={"/static/img/ml_logo_text.svg"} />
+        </Logo>
+      </Container>
     </Wrapper>
   );
 };
@@ -16,9 +22,17 @@ const Wrapper = styled(Box)`
   width: 100%;
   height: ${({ theme }) => theme.navHeight};
 `;
+const Logo = styled(Box)`
+  width: 55px;
+  img {
+    display: block;
+    width: 100%;
+  }
+`;
 
 const Container = styled(ThemeContainer)`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100%;

@@ -1,5 +1,5 @@
 import "styles/fonts.css";
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import { ThemeProvider } from "theme-ui";
 import Layout from "../components/Global/Layout";
 import theme from "../theme";
@@ -24,6 +24,7 @@ function MyApp({ Component, pageProps }) {
     console.log("📟 VIEW", "Home");
     gtag.pageview("Home");
   }, []);
+
   return (
     <AppContextProvider>
       <ThemeProvider theme={theme}>

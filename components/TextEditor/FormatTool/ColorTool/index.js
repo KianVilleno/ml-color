@@ -1,26 +1,26 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import styled from "@emotion/styled";
 import { Box } from "theme-ui";
 import Color from "./Color";
 import { AppContext } from "context/AppContext";
 import randomColor from "randomcolor";
 import { IoIosColorPalette } from "react-icons/io";
-const colors = [
-  "#FF0000",
-  "#00FF00",
-  "#0000CC",
-  "#FFFF00",
-  "#FFA500",
-  "#800000",
-  "#FF00FF",
-  "#00FFFF",
-  ...randomColor({
-    count: 50,
-    luminosity: "light",
-  }),
-];
 
 const ColorTool = () => {
+  const [colors] = useState([
+    "#FF0000",
+    "#00FF00",
+    "#0000CC",
+    "#FFFF00",
+    "#FFA500",
+    "#800000",
+    "#FF00FF",
+    "#00FFFF",
+    ...randomColor({
+      count: 50,
+      luminosity: "light",
+    }),
+  ]);
   const { editor, setShowColorPicker } = useContext(AppContext);
   return (
     <Wrapper>

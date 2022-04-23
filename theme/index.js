@@ -1,7 +1,7 @@
 import { css } from "@emotion/react";
 const breakpoints = ["600px"];
 const space = [0, 4, 8, 16, 32, 64, 128, 256, 512];
-const navHeight = "65px";
+const navHeight = "70px";
 const layout = {
   container: {
     maxWidth: ["100%", "600px"],
@@ -22,6 +22,16 @@ const colors = {
   tertiary: "#A6B5F8",
 };
 const buttons = {
+  primary: {
+    bg: "black",
+    border: `3px solid ${colors.black}`,
+    color: "white",
+    padding: "0.4rem 1rem",
+    borderRadius: "50px",
+    mx: [2],
+    mb: [3],
+    cursor: "pointer",
+  },
   tool: {
     bg: "transparent",
     border: `2px solid ${colors.black}`,
@@ -31,7 +41,7 @@ const buttons = {
     mx: [2],
     mb: [3],
   },
-  getButton: {
+  outline: {
     bg: "transparent",
     border: `3px solid ${colors.black}`,
     color: "text",
@@ -39,6 +49,7 @@ const buttons = {
     borderRadius: "50px",
     mx: [2],
     mb: [3],
+    cursor: "pointer",
   },
   copyButton: {
     bg: "transparent",

@@ -16,7 +16,9 @@ const Output = () => {
     <Wrapper mt={[3]} p={[3]}>
       {code}
       <CopyToClipboard text={code} onCopy={handleCopied}>
-        <CopyButton variant="copyButton">{copyString}</CopyButton>
+        <CopyButton disabled={!code} variant="copyButton">
+          {copyString}
+        </CopyButton>
       </CopyToClipboard>
     </Wrapper>
   );
@@ -33,6 +35,7 @@ const Wrapper = styled(Box)`
 `;
 
 const CopyButton = styled(Button)`
+  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
   position: absolute;
   bottom: 0;
   right: 0;

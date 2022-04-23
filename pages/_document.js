@@ -7,6 +7,7 @@ export default class AppDocument extends Document {
     const page = await ctx.renderPage();
     const { css, ids } = await renderStatic(page.html);
     const initialProps = await Document.getInitialProps(ctx);
+
     return {
       ...initialProps,
       styles: (

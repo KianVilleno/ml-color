@@ -1,0 +1,38 @@
+[
+  {
+    "name": "halimuyak - All Candle",
+    "category": "halimuyak",
+    "linkText": "Shop Now!",
+    "link": "https://shopee.ph/product/732012628/16848293620",
+    "image": {
+      "src": "/static/img/halimuyak/all.jpg"
+    }
+  },
+  {
+    "name": "halimuyak - Rose Candle",
+    "category": "halimuyak",
+    "linkText": "Buy Rose Candle",
+    "link": "https://shopee.ph/product/732012628/16848293620",
+    "image": {
+      "src": "/static/img/halimuyak/rose.jpg"
+    }
+  },
+  {
+    "name": "halimuyak - Vanilla Candle",
+    "category": "halimuyak",
+    "linkText": "Buy Vanilla Candle",
+    "link": "https://shopee.ph/product/732012628/16848293620",
+    "image": {
+      "src": "/static/img/halimuyak/vanilla.jpg"
+    }
+  },
+  {
+    "name": "halimuyak - Lavender Candle",
+    "category": "halimuyak",
+    "linkText": "Buy Lavender Candle",
+    "link": "https://shopee.ph/product/732012628/16848293620",
+    "image": {
+      "src": "/static/img/halimuyak/lavender.jpg"
+    }
+  }
+]

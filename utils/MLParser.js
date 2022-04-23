@@ -17,8 +17,6 @@ function MLParser(html) {
     let { color, textDecorationLine, fontWeight, fontStyle } = node.style;
     color = color || inheritedColor;
 
-    console.log(node.nodeName);
-
     // Determine U,S,B,I:
     let styles = {
       u:
