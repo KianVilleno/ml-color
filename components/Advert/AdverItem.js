@@ -6,16 +6,23 @@ import { AspectRatio, Box, Button } from "theme-ui";
 import * as gtag from "utils/gtag";
 
 const AdverItem = ({ data }) => {
-  const { name, image, link, linkText, category } = data;
+  const { name, image, link, linkText, category, giveaway } = data;
   const handleClick = () => {
-    gtag.event("clicked_ad", category, name);
+    let event = "clicked_ad";
+    if (giveaway) event = "clicked_giveaway";
+    gtag.event(event, category, name);
   };
   return (
     <AspectRatioWrapper ratio={1} mb={[3]}>
       <Wrapper href={link || "/"} target="__blank" as="a" onClick={handleClick}>
         {linkText && <CTAButton m={3}>{linkText}</CTAButton>}
         {image?.src && (
-          <Image alt={name} src={image?.src} layout="fill" objectFit="cover" />
+          <Image
+            alt={name}
+            src={`${image?.src}`}
+            layout="fill"
+            objectFit="cover"
+          />
         )}
       </Wrapper>
     </AspectRatioWrapper>

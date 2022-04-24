@@ -5,7 +5,9 @@ import { AspectRatio, Box, Button, Text } from "theme-ui";
 import Modal from "../Modal";
 
 const Tutorial = () => {
-  const { showTutorial, setShowTutorial } = useContext(AppContext);
+  const { showTutorial, setShowTutorial, setShowConfetti } =
+    useContext(AppContext);
+
   useEffect(() => {
     const isTutorialDone = localStorage.getItem("mlcolour-tutorial-done");
     if (!isTutorialDone) {
@@ -13,6 +15,12 @@ const Tutorial = () => {
     }
     setShowTutorial(isTutorialDone !== "true");
   }, []);
+
+  const handleStart = () => {
+    setShowConfetti(true);
+    setShowTutorial(false);
+  };
+
   return (
     <Modal show={showTutorial}>
       <Title my={3}>Welcome to MLColour!</Title>
@@ -26,7 +34,7 @@ const Tutorial = () => {
           src="https://www.youtube.com/embed/_Vxz64lc8uM"
         ></YoutubeVideo>
       </VideoWrapper>
-      <Button variant="outline" mt={4} onClick={() => setShowTutorial(false)}>
+      <Button variant="outline" mt={4} onClick={handleStart}>
         Get Started!
       </Button>
     </Modal>

@@ -18,6 +18,7 @@ export const AppContextProvider = ({ children }) => {
   const [showAdvert, setShowAdvert] = useState(false);
   const [advertCooldown, setAdvertCooldown] = useState(0);
   const [showTutorial, setShowTutorial] = useState(false);
+  const [showConfetti, setShowConfetti] = useState(false);
 
   const generateCode = () => {
     const html = editor.getHTML();
@@ -37,6 +38,8 @@ export const AppContextProvider = ({ children }) => {
     generateCode,
     showTutorial,
     setShowTutorial,
+    showConfetti,
+    setShowConfetti,
   };
   return (
     <AppContext.Provider value={contextValues}>{children}</AppContext.Provider>

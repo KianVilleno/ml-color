@@ -1,5 +1,16 @@
 [
   {
+    "name": "₱ 1,000 Gcash Giveaway",
+    "giveaway": true,
+    "time": "",
+    "category": "halimuyak",
+    "linkText": "Enter Now!",
+    "link": "https://bit.ly/mlcolour-giveaway",
+    "image": {
+      "src": "/static/img/mlcolour-giveaway/gcash_giveaway.jpg"
+    }
+  },
+  {
     "name": "halimuyak - All Candle",
     "category": "halimuyak",
     "linkText": "Shop Now!",
