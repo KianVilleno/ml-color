@@ -2,10 +2,10 @@ import React from "react";
 import Head from "next/head";
 
 const Seo = ({ title, description, image, canonical, isHome }) => {
-  const domain = "";
+  const domain = "mlcolour.com";
   const siteName = "MLColour.";
   const canonicalFull = canonical ? `${domain}${canonical}` : null;
-  let pageTitle = title;
+  let pageTitle = isHome ? title : `${title} — ${siteName}`;
   if (!title) pageTitle = siteName;
 
   return (

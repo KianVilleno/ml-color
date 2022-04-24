@@ -14,6 +14,7 @@ export default function Home() {
         <GetButton />
       </Wrapper>
       <Seo
+        isHome
         title="MLColour."
         image="/static/img/seo.png"
         description={

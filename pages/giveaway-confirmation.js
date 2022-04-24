@@ -1,13 +1,17 @@
 import GiveawaySignUp from "@/components/GiveawaySignUp";
+import Seo from "@/components/Seo";
 import styled from "@emotion/styled";
 import React from "react";
 import { Box } from "theme-ui";
 
 const GiveawayConfirmation = () => {
   return (
-    <Wrapper p={3} mt={4}>
-      <GiveawaySignUp />
-    </Wrapper>
+    <>
+      <Wrapper p={3} mt={4}>
+        <GiveawaySignUp />
+      </Wrapper>
+      <Seo title={"Giveaway Confirmation"} />
+    </>
   );
 };
 
