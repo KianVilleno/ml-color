@@ -15,11 +15,14 @@
     "@emotion/css": "^11.1.3",
     "@emotion/server": "^11.4.0",
     "@emotion/styled": "^11.3.0",
+    "@notionhq/client": "^1.0.4",
     "@tiptap/extension-color": "^2.0.0-beta.9",
     "@tiptap/extension-text-style": "^2.0.0-beta.23",
     "@tiptap/extension-underline": "^2.0.0-beta.23",
     "@tiptap/react": "^2.0.0-beta.108",
     "@tiptap/starter-kit": "^2.0.0-beta.183",
+    "axios": "^0.26.1",
+    "formik": "^2.2.9",
     "framer-motion": "^6.3.1",
     "next": "12.1.4",
     "randomcolor": "^0.6.2",
@@ -31,7 +34,8 @@
     "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "17.0.2",
     "react-icons": "^4.3.1",
-    "theme-ui": "0.11.3"
+    "theme-ui": "0.11.3",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "eslint": "8.13.0",
