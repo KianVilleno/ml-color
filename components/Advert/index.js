@@ -6,6 +6,7 @@ import AdverItem from "./AdverItem";
 import adverts from "data/adverts";
 import Modal from "../Modal";
 import * as gtag from "utils/gtag";
+import AdSense from "react-adsense";
 
 const TIMER = 15;
 const COOLDOWN = 5;
@@ -56,6 +57,15 @@ const Advert = () => {
       {adverts?.map((data, i) => (
         <AdverItem key={`advert-${i}`} data={data} />
       ))}
+      <GoogleAd mb={[3]}>
+        <AdSense.Google
+          client="ca-pub-6028402156043755"
+          slot="2237271591"
+          style={{ display: "block" }}
+          layoutKey="-6t+ed+2i-1n-4w"
+          format="fluid"
+        />
+      </GoogleAd>
       <ContinueButton
         fade={!continueAllowed}
         disabled={!continueAllowed}
@@ -78,4 +88,8 @@ const Caption = styled(Text)`
 const ContinueButton = styled(Button)`
   opacity: ${({ fade }) => (fade ? 0.2 : 1)};
   cursor: ${({ fade }) => (fade ? " not-allowed" : "pointer")};
+`;
+
+const GoogleAd = styled(Box)`
+  background-color: #dfdfde;
 `;

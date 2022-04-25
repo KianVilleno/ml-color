@@ -27,6 +27,7 @@
     "next": "12.1.4",
     "randomcolor": "^0.6.2",
     "react": "17.0.2",
+    "react-adsense": "^0.1.0",
     "react-animate-height": "^2.1.2",
     "react-color": "^2.19.3",
     "react-colorful": "^5.5.1",
