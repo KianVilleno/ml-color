@@ -32,7 +32,7 @@ const Modal = ({ show, children }) => {
 export default Modal;
 
 const Wrapper = styled(Box)`
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   left: 0;
