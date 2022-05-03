@@ -13,7 +13,7 @@ const GetButton = () => {
   } = useContext(AppContext);
 
   const handleClick = () => {
-    if (advertCooldown === 0) {
+    if (false) {
       setShowAdvert(true);
     } else {
       gtag.event("generate_code", "Default");
