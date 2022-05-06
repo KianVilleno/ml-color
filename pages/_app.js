@@ -6,7 +6,6 @@ import theme from "../theme";
 import { Global, css } from "@emotion/react";
 import { AppContextProvider } from "context/AppContext";
 import * as gtag from "utils/gtag";
-import Head from "next/head";
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -30,9 +29,6 @@ function MyApp({ Component, pageProps }) {
     <AppContextProvider>
       <ThemeProvider theme={theme}>
         <Layout>
-          <Head>
-            <meta name="propeller" content="c56d96f86fa187fd654c5b73af074829" />
-          </Head>
           <GlobalStyle theme={theme} />
           <Component {...pageProps} />
         </Layout>
