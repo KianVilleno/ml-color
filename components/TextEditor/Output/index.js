@@ -4,8 +4,9 @@ import { Box, Button } from "theme-ui";
 import { AppContext } from "context/AppContext";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
-const Output = () => {
-  const { code } = useContext(AppContext);
+const Output = ({ code = null }) => {
+  const appContext = useContext(AppContext);
+  code = code ? code : appContext?.code;
   const [copyString, setCopyString] = useState("Copy");
   const handleCopied = () => {
     setCopyString("Copied!");
