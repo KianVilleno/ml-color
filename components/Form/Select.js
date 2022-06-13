@@ -6,7 +6,7 @@ import { useField, Field } from "formik";
 const Select = ({ label, options, ...props }) => {
   const [field, meta, helpers] = useField(props);
   return (
-    <Wrapper mb={4}>
+    <Wrapper mb={[3, 4]}>
       <StyledLabel as="label" mb={[2]}>
         {label}
       </StyledLabel>
@@ -30,6 +30,9 @@ const StyledSelect = styled(Field)`
   width: 50%;
   padding: 0.5rem 0.5rem;
   border-radius: 5px;
+  outline: none;
+  color: inherit;
+  -webkit-appearance: none;
 `;
 const StyledLabel = styled(Box)`
   display: block;

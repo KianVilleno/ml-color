@@ -6,7 +6,7 @@ import { Box } from "theme-ui";
 const Input = ({ ...props }) => {
   const [field, meta, helpers] = useField(props);
   return (
-    <Wrapper mb={4} as="label" htmlFor={field?.name}>
+    <Wrapper mb={[3, 4]} as="label" htmlFor={field?.name}>
       <StyledInput {...field} {...props} />
       <FloatingText as="span">{props.placeholder}</FloatingText>
       {meta.touched && meta.error ? (
@@ -24,7 +24,7 @@ const Wrapper = styled(Box)`
 
   &:focus-within > span,
   input:not(:placeholder-shown) + span {
-    font-size: 0.8em;
+    font-size: 0.7em;
     transform: translateY(-10px);
   }
 `;
@@ -42,6 +42,7 @@ const StyledInput = styled(Field)`
   &::placeholder {
     opacity: 0;
   }
+  border-radius: 0;
 `;
 const FloatingText = styled(Box)`
   position: absolute;
@@ -49,4 +50,5 @@ const FloatingText = styled(Box)`
   left: 0;
   transform: translateY(5px);
   transition-duration: 300ms;
+  pointer-events: none;
 `;
