@@ -26,13 +26,14 @@ const Wrapper = styled(Box)``;
 const StyledSelect = styled(Field)`
   border: none;
   font-size: 1rem;
-  border: 2px solid black;
+  border: 1px solid ${({ theme }) => theme.colors.black};;
   width: 50%;
   padding: 0.5rem 0.5rem;
   border-radius: 5px;
   outline: none;
   color: inherit;
   -webkit-appearance: none;
+  background-color: ${({ theme }) => theme.colors.white};;
 `;
 const StyledLabel = styled(Box)`
   display: block;

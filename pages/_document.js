@@ -44,6 +44,11 @@ export default class AppDocument extends Document {
           <Main />
           <NextScript />
           <script
+            async="async"
+            data-cfasync="false"
+            src="//pl17456758.profitablecpmgate.com/145ea40c2467c98edb9d771cbd1d2b3c/invoke.js"
+          ></script>
+          <script
             async
             src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6028402156043755"
             crossOrigin="anonymous"

@@ -21,11 +21,9 @@ export default Input;
 const Wrapper = styled(Box)`
   display: block;
   position: relative;
-
   &:focus-within > span,
   input:not(:placeholder-shown) + span {
-    font-size: 0.7em;
-    transform: translateY(-10px);
+    transform: translateY(-10px) translateX(-20%) scale(0.6);
   }
 `;
 const MessageError = styled(Box)`
@@ -34,7 +32,7 @@ const MessageError = styled(Box)`
 `;
 const StyledInput = styled(Field)`
   border: 0;
-  border-bottom: 2px solid ${({ theme }) => theme.colors.black};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.black};
   outline: none;
   width: 100%;
   padding: 0.5rem 0;
@@ -49,6 +47,6 @@ const FloatingText = styled(Box)`
   top: 0;
   left: 0;
   transform: translateY(5px);
-  transition-duration: 300ms;
+  transition: 250ms all ease-in-out;
   pointer-events: none;
 `;
