@@ -7,6 +7,10 @@ import Select from "../Form/Select";
 import axios from "axios";
 import Output from "../TextEditor/Output";
 import * as Yup from "yup";
+import MLHerosBackup from "data/mlheroes.backup.json";
+
+import { AnimatePresence } from "framer-motion";
+import PageAnimWrap from "../PageAnimWrap";
 
 const ChatPrank = () => {
   const [MLBHeros, setMLBHeros] = useState([]);
@@ -23,11 +27,14 @@ const ChatPrank = () => {
   };
   useEffect(() => {
     getAllMLBHeroes();
+    setMLBHeros(MLHerosBackup.data?.map(({ name }) => name).sort());
   }, []);
+
+  console.log(MLHerosBackup);
 
   return (
     <>
-      <Wrapper my={[3, 4]} px={[4, 4]} py={[4, 5]}>
+      <Wrapper my={[3, 4]} p={[4]}>
         <Formik
           initialValues={{
             yourMessage: "",
@@ -38,12 +45,14 @@ const ChatPrank = () => {
           }}
           validationSchema={Yup.object().shape({
             yourMessage: Yup.string()
-              .max(10)
+              .max(15, "15 characters only.")
               .required("Your Message is required."),
             theirMessage: Yup.string()
-              .max(10)
+              .max(15, "15 characters only.")
               .required("Their Message is required."),
-            theirName: Yup.string().max(10).required("Their Name is required."),
+            theirName: Yup.string()
+              .max(15, "15 characters only.")
+              .required("Their Name is required."),
           })}
           onSubmit={async ({
             yourMessage,
@@ -53,7 +62,6 @@ const ChatPrank = () => {
             theirName,
           }) => {
             const ColorCode = chat === "Team" ? "6495ED" : "FF0000";
-
             const chatCodeGenerated = `${yourMessage} [${ColorCode}][${chat}]${theirName}(${hero}): [-]${theirMessage}`;
             setChatCode(chatCodeGenerated);
           }}
@@ -70,12 +78,23 @@ const ChatPrank = () => {
                 <Select label="Chat" name="chat" options={["Team", "All"]} />
               </Box>
             </RadioWrapper>
+
             <Button mx={0} mb={2} type="submit">
               Generate Code
             </Button>
           </Form>
         </Formik>
-        <Output code={chatCode} />
+        {chatCode !== "" && (
+          <AnimatePresence exitBeforeEnter>
+            <PageAnimWrap
+              type="fade"
+              options={{ delay: 0.2 }}
+              motionKey={chatCode !== ""}
+            >
+              <Output code={chatCode} />
+            </PageAnimWrap>
+          </AnimatePresence>
+        )}
       </Wrapper>
       <div id="container-145ea40c2467c98edb9d771cbd1d2b3c"></div>
     </>
