@@ -33,7 +33,7 @@ const Layout = ({ children }) => {
       <AnimatePresence exitBeforeEnter>
         <PageAnimWrap
           type="fade"
-          options={{ delay: 1.3 }}
+          options={{ delay: 0.8 }}
           motionKey={router.asPath}
         >
           <Footer />

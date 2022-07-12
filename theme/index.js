@@ -92,6 +92,7 @@ const theme = {
   boxShadow,
   text,
   transitions,
+  mediaQueries,
 };
 
 export default theme;

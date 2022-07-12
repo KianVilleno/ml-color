@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "@emotion/styled";
-import { Box, Button } from "theme-ui";
+import { Box, Button, Text } from "theme-ui";
 import { Formik, Field, Form } from "formik";
 import Input from "../Form/Input";
 import Select from "../Form/Select";
@@ -15,6 +15,7 @@ import PageAnimWrap from "../PageAnimWrap";
 const ChatPrank = () => {
   const [MLBHeros, setMLBHeros] = useState([]);
   const [chatCode, setChatCode] = useState("");
+  const [showAd, setShowAd] = useState(false);
 
   const getAllMLBHeroes = async () => {
     try {
@@ -28,6 +29,12 @@ const ChatPrank = () => {
   useEffect(() => {
     getAllMLBHeroes();
     setMLBHeros(MLHerosBackup.data?.map(({ name }) => name).sort());
+  }, []);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setShowAd(true);
+    }, 2888);
   }, []);
 
   return (
@@ -94,7 +101,20 @@ const ChatPrank = () => {
           </AnimatePresence>
         )}
       </Wrapper>
-      <div id="container-145ea40c2467c98edb9d771cbd1d2b3c"></div>
+
+      {showAd && (
+        <AnimatePresence exitBeforeEnter>
+          <PageAnimWrap type="fade" motionKey={showAd}>
+            <AdWrapper mb={2}>
+              <Caption pb={[2]} pt={[3]}>
+                To help support our app and keep it running, please watch this
+                short advertisement.👇
+              </Caption>
+              <div id="container-145ea40c2467c98edb9d771cbd1d2b3c"></div>
+            </AdWrapper>
+          </PageAnimWrap>
+        </AnimatePresence>
+      )}
     </>
   );
 };
@@ -112,4 +132,24 @@ const RadioWrapper = styled(Box)`
   display: grid;
   width: 100%;
   grid-template-columns: 1fr 1fr;
+`;
+
+const AdWrapper = styled(Box)`
+  background-color: ${({ theme }) => theme.colors.white};
+  -webkit-box-shadow: 5px 5px 10px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 5px 5px 10px 6px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  width: 100%;
+  min-height: 50vh;
+  ${({ theme }) => theme.mediaQueries.small} {
+    min-height: 15vh;
+  }
+`;
+
+const Caption = styled(Text)`
+  font-size: 0.8rem;
+  display: block;
+  width: 80%;
+  text-align: center;
+  margin: auto;
 `;
