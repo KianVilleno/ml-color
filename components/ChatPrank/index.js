@@ -30,8 +30,6 @@ const ChatPrank = () => {
     setMLBHeros(MLHerosBackup.data?.map(({ name }) => name).sort());
   }, []);
 
-  console.log(MLHerosBackup);
-
   return (
     <>
       <Wrapper my={[3, 4]} p={[4]}>
