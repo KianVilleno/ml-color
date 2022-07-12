@@ -27,7 +27,7 @@ const ChatPrank = () => {
 
   return (
     <>
-      <Wrapper my={[4, 5]} px={[4, 4]} py={[4, 5]}>
+      <Wrapper my={[3, 4]} px={[4, 4]} py={[4, 5]}>
         <Formik
           initialValues={{
             yourMessage: "",
@@ -62,9 +62,15 @@ const ChatPrank = () => {
             <Input name="yourMessage" placeholder="Your Message" />
             <Input name="theirName" placeholder="Their Name" />
             <Input name="theirMessage" placeholder="Their Message" />
-            <Select label="Their Hero" name="hero" options={MLBHeros} />
-            <Select label="Chat" name="chat" options={["Team", "All"]} />
-            <Button mx={0} type="submit">
+            <RadioWrapper>
+              <Box mr={[1, 2]}>
+                <Select label="Their Hero" name="hero" options={MLBHeros} />
+              </Box>
+              <Box ml={[1, 2]}>
+                <Select label="Chat" name="chat" options={["Team", "All"]} />
+              </Box>
+            </RadioWrapper>
+            <Button mx={0} mb={2} type="submit">
               Generate Code
             </Button>
           </Form>
@@ -83,4 +89,10 @@ const Wrapper = styled(Box)`
   -webkit-box-shadow: 5px 5px 10px 6px rgba(0, 0, 0, 0.3);
   box-shadow: 5px 5px 10px 6px rgba(0, 0, 0, 0.3);
   border-radius: 12px;
+`;
+
+const RadioWrapper = styled(Box)`
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
 `;

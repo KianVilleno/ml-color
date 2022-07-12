@@ -14,7 +14,7 @@ const Output = ({ code = null }) => {
   };
 
   return (
-    <Wrapper mt={[3]} p={[3]}>
+    <Wrapper mt={[2, 3]} p={[2, 3]}>
       {code}
       <CopyToClipboard text={code} onCopy={handleCopied}>
         <CopyButton disabled={!code} variant="copyButton">
